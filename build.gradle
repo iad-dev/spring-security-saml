@@ -16,8 +16,8 @@ configure(allprojects) { project ->
 	group = "org.springframework.security.extensions"
 
 	ext.slf4jVersion = "1.6.3"
-	ext.springVersion = "3.1.2.RELEASE"
-	ext.springSecurityVersion = "3.1.2.RELEASE"
+	ext.springVersion = "5.0.0.M2"
+	ext.springSecurityVersion = "5.0.0.M2"
 	ext.gradleScriptDir = "${rootProject.projectDir}/gradle"
 
 	apply plugin: "propdeps"
@@ -40,6 +40,7 @@ configure(allprojects) { project ->
 
 	repositories {
 		maven { url 'https://repo1.maven.org/maven2/' }
+		maven { url "https://repo.spring.io/milestone" }
 	}
 
 	ext.javadocLinks = [

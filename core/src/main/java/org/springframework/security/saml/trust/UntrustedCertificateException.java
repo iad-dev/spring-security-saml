@@ -15,7 +15,7 @@
  */
 package org.springframework.security.saml.trust;
 
-import org.springframework.security.crypto.codec.Base64;
+import org.apache.xml.security.utils.Base64;
 import org.springframework.security.crypto.codec.Hex;
 
 import java.security.MessageDigest;
@@ -100,7 +100,7 @@ public class UntrustedCertificateException extends CertificateException {
     private static void appendCertificate(X509Certificate x509Certificate, StringBuilder sb) {
         sb.append("-----BEGIN CERTIFICATE-----\n");
         try {
-            String certificate = new String(Base64.encode(x509Certificate.getEncoded()));
+            String certificate = Base64.encode(x509Certificate.getEncoded());
             int i = 0;
             while (true) {
                 int j = i + 76;
